@@ -509,7 +509,7 @@ Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hash
 Cost 2 (iteration count) is 1 for all loaded hashes
 Will run 2 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
-creepin2006      (admin_rsa)
+xxxxxxxxxxx      (admin_rsa)
 1g 0:00:00:16 DONE (2021-11-21 06:20) 0.05906g/s 847117p/s 847117c/s 847117C/s *7¡Vamos!
 Session completed.
 ```
