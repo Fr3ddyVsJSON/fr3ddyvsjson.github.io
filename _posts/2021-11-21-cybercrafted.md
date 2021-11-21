@@ -608,14 +608,14 @@ Naturally we would gravitate towards `passwords.yml`. The password hashes in thi
 xxxxxxxxxxxxxxxxxxx@cybercrafted:/opt/minecraft/cybercrafted/plugins/xxxxxxxxxxx$ cat log.txt
 
 [2021/06/27 11:25:07] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
-[2021/06/27 11:25:16] cybercrafted registered. PW: JavaEdition>Bedrock
+[2021/06/27 11:25:16] cybercrafted registered. PW: xxxxxxxxxxxxxxxxxxx
 [2021/06/27 11:46:30] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
-[2021/06/27 11:47:34] cybercrafted logged in. PW: JavaEdition>Bedrock
+[2021/06/27 11:47:34] cybercrafted logged in. PW: xxxxxxxxxxxxxxxxxxx
 [2021/06/27 11:52:13] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
 [2021/06/27 11:57:29] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
-[2021/06/27 11:57:54] cybercrafted logged in. PW: JavaEdition>Bedrock
+[2021/06/27 11:57:54] cybercrafted logged in. PW: xxxxxxxxxxxxxxxxxxx
 [2021/06/27 11:58:38] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
-[2021/06/27 11:58:46] cybercrafted logged in. PW: JavaEdition>Bedrock
+[2021/06/27 11:58:46] cybercrafted logged in. PW: xxxxxxxxxxxxxxxxxxx
 [2021/06/27 11:58:52] [BUKKIT-SERVER] Startet xxxxxxxxxxx!
 [2021/06/27 11:59:01] madrinch logged in. PW: Password123
 
