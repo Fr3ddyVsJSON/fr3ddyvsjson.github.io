@@ -9,6 +9,8 @@ tags: [tryhackme, sqli, sqlmap, ssh2john, screen]
 
 ## **Intro**
 
+[CYBERCRAFTED](https://tryhackme.com/room/cybercrafted)
+
 This is a medium TryHackMe box which houses a Mincraft server. We enumerate subdomains and pages across those subdomains to find a vulnerable page. We find one of those pages is vulnerable to SQL injection which gives us credentials to login to an admin panel. This login brings us to a page which allows us to execute commands on the server. From there we can spawn a reverse shell to access the box and find an exposed ssh private key. With that we extract the passphrase hash off of the key, crack it, and ssh onto the box as the admin. From there we find credentials leaked in a log file which allows to switch to another user. That user is allowed to run a sudo command which allows us to spawn a root shell.
 
 ## **Enumeration**
@@ -17,7 +19,7 @@ This is a medium TryHackMe box which houses a Mincraft server. We enumerate subd
 
 To get started, we begin with an nmap of the machine to find any open ports. I like to find all open ports to begin with, but it can be very time consuming. This nmap scan seems to work well within these isolated learning environmets to quickly find open ports on a system:
 
-```terminal
+```
 sudo nmap -v --min-rate 10000 10.10.70.248 -p-
 
 Starting Nmap 7.60 ( https://nmap.org ) at 2021-11-21 03:07 GMT
@@ -49,7 +51,7 @@ This answers the first question.
 
 Now that we know what the ports are, we can run some default scripts against them to tell us more information about the services those ports are hosting:
 
-```terminal
+```
 sudo nmap -A 10.10.70.248 -p22,80,25565
 
 Starting Nmap 7.60 ( https://nmap.org ) at 2021-11-21 03:13 GMT
@@ -254,19 +256,19 @@ Which columns returned from the original query are of a suitable data type to ho
 
 Since error messages don't appear to be returned to the webpage with a broken SQL query, we'll use NULLs to to find the number of columns. Starting off with `' UNION SELECT NULL-- -` shows nothing in the results. That's okay. We'll keep adding NULLs until we get a successful return. With the query `' UNION SELECT NULL,NULL,NULL,NULL-- -` we see some results. Now we now there are four columns.
 
-![](Inkedscreenshot6.jpg)
+![](/assets/img/post_images/post2/Inkedscreenshot6.jpg)
 
 Now to get the available tables, we can use the query `' UNION SELECT NULL,NULL,NULL,table_name FROM information_schema.tables-- -`
 
-![](Inkedscreenshot7.jpg)
+![](/assets/img/post_images/post2/Inkedscreenshot7.jpg)
 
 The `admin` table at the bottom looks promising. Next we'll see what fields the `admin` table has with `' UNION SELECT NULL,NULL,NULL,column_name FROM information_schema.columns WHERE table_name='admin'-- -`
 
-![](Inkedscreenshot8.jpg)
+![](/assets/img/post_images/post2/Inkedscreenshot8.jpg)
 
 The admin table has an id, user, and hash field. To view the values from the fields, we'll finish of this injection with `' UNION SELECT NULL,NULL,user,hash FROM admin-- -`
 
-![](Inkedscreenshot9.jpg)
+![](/assets/img/post_images/post2/Inkedscreenshot9.jpg)
 
 Now if you wanted a script to take care of figuring this all out for you, you could have used `sqlmap`
 
