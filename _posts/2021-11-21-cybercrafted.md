@@ -7,7 +7,7 @@ tags: [tryhackme, sqli, sqlmap, ssh2john, screen]
 
 ## **Intro**
 
-https://tryhackme.com/room/cybercrafted
+[Cybercrafted](https://tryhackme.com/room/cybercrafted)
 
 This is a medium TryHackMe box which houses a Mincraft server. We enumerate subdomains and pages across those subdomains to find a vulnerable page. We find one of those pages is vulnerable to SQL injection which gives us credentials to login to an admin panel. This login brings us to a page which allows us to execute commands on the server. From there we can spawn a reverse shell to access the box and find an exposed ssh private key. With that we extract the passphrase hash off of the key, crack it, and ssh onto the box as the admin. From there we find credentials leaked in a log file which allows to switch to another user. That user is allowed to run a sudo command which allows us to spawn a root shell.
 
