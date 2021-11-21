@@ -1,6 +1,6 @@
 ---
 title: Cybercrafted
-date: 2021-11-21 15:00:00 -0500
+date: 2021-11-21 09:00:00 -0500
 categories: [TryHackMe]
 tags: [tryhackme, sqli, sqlmap, ssh2john, screen]
 ---
@@ -168,7 +168,7 @@ Oh secrets??
 
 Oh...
 
-No, there just pictures. Perhaps there's hidden info embedded within the images, but we'll shelve that for now. Let's keep looking for other pages. Next up is `admin.cybercrafted.thm`:
+They are only pictures. Perhaps there's hidden info embedded within the images, but we'll shelve that for now. Let's keep looking for other pages. Next up is `admin.cybercrafted.thm`:
 
 ```
 gobuster dir -u http://admin.cybercrafted.thm/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/raft-small-words.txt -s 200,301,302 -x php
