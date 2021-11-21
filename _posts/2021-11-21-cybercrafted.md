@@ -1,6 +1,6 @@
 ---
 title: Cybercrafted
-date: 2021-11-21 09:00:00 -0500
+date: 2021-11-21 15:00:00 -0500
 categories: [TryHackMe]
 tags: [tryhackme, sqli, sqlmap, ssh2john, screen]
 ---
